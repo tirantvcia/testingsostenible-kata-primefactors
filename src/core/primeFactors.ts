@@ -1,5 +1,9 @@
 export function primeFactors(numero: number): number[] {
 
+    if (numero <= 0) {
+        throw new Error("Solo se permiten números positivos.");
+    }
+
     let divisor = getSmallestPrimeDivisorForNumber(numero);
     var divisores = [divisor];
 
@@ -11,6 +15,8 @@ export function primeFactors(numero: number): number[] {
     return divisores;
 }
 function getSmallestPrimeDivisorForNumber(numero: number) {
+
+
 
     if (numero === 1) {
         return 1;
