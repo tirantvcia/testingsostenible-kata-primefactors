@@ -1,13 +1,5 @@
 export function primeFactors(numero: number): number[] {
 
-    if (numero === 1) {
-        return [1];
-    }
-
-    if (numero < 0) {
-        return [numero]
-    }
-
     let divisor = getSmallestPrimeDivisorForNumber(numero);
     var divisores = [divisor];
 
@@ -19,6 +11,11 @@ export function primeFactors(numero: number): number[] {
     return divisores;
 }
 function getSmallestPrimeDivisorForNumber(numero: number) {
+
+    if (numero === 1) {
+        return 1;
+    }
+
     let divisor = 2;
 
     while (notDivisorForNumber(numero, divisor)) {
