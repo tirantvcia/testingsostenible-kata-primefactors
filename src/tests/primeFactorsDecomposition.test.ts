@@ -38,6 +38,10 @@ describe("Descomposición factores primos", () => {
 
     });
 
+    it("Solo se aceptan números positivos mayores que 0", () => {
+        expect(primeFactors(0)).toThrow();
+    })
+
 });
 
 
