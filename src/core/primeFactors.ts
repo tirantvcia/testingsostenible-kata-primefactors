@@ -1,19 +1,15 @@
 export function primeFactors(numero: number): number[] {
 
+    checkIfPositiveNumber(numero);
+    return getPrimeFactors(numero);
+
+}
+function checkIfPositiveNumber(numero: number) {
     if (numero <= 0) {
         throw new Error("Solo se permiten números positivos.");
     }
-
-    let divisor = getSmallestPrimeDivisorForNumber(numero);
-    var divisores = [divisor];
-
-    const remainder = numero / divisor;
-    if (remainder > 1) {
-        return divisores.concat(primeFactors(remainder));
-    }
-
-    return divisores;
 }
+
 function getSmallestPrimeDivisorForNumber(numero: number) {
 
 
@@ -31,4 +27,16 @@ function getSmallestPrimeDivisorForNumber(numero: number) {
 }
 function notDivisorForNumber(numero: number, divisor: number) {
     return numero % divisor != 0;
+}
+
+function getPrimeFactors(numero: number) {
+    let divisor = getSmallestPrimeDivisorForNumber(numero);
+    var divisores = [divisor];
+
+    const remainder = numero / divisor;
+    if (remainder > 1) {
+        return divisores.concat(primeFactors(remainder));
+    }
+
+    return divisores;
 }
