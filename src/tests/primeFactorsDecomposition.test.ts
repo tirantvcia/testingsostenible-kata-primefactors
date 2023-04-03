@@ -39,6 +39,7 @@ describe("Descomposición factores primos", () => {
     });
     it("Un número primo menor que 0 devuelve el mismo número", () => {
         expect(primeFactors(-2)).toMatchObject([-2])
+        expect(primeFactors(-3)).toMatchObject([-3])
     });
 
 });

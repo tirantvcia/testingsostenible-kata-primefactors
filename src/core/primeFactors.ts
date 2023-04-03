@@ -4,7 +4,9 @@ export function primeFactors(numero: number): number[] {
         return [1];
     }
 
-
+    if (numero < 0) {
+        return [numero]
+    }
 
     let divisor = getSmallestPrimeDivisorForNumber(numero);
     var divisores = [divisor];
