@@ -12,7 +12,13 @@
 import { primeFactors } from "../core/primeFactors";
 
 describe("Descomposición factores primos", () => {
-    it("Un número primo devuelve el mismo número", () => {
+
+    it("1 es primo y se devuelve el mismo número", () => {
+        expect(primeFactors(1)).toMatchObject([1])
+    });
+
+
+    it("Un número primo mayor que 1 devuelve el mismo número", () => {
         var result = primeFactors(2);
         expect(result).toMatchObject([2]);
         expect(primeFactors(3)).toMatchObject([3])
@@ -31,6 +37,7 @@ describe("Descomposición factores primos", () => {
         expect(primeFactors(5 * 7 * 11 * 3)).toMatchObject([3, 5, 7, 11])
 
     });
+
 
 });
 

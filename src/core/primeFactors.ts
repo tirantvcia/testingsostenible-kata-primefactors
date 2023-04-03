@@ -1,5 +1,7 @@
 export function primeFactors(numero: number): number[] {
 
+
+
     let divisor = getSmallestPrimeDivisorForNumber(numero);
     var divisores = [divisor];
 
